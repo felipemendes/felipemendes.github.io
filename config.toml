@@ -1,9 +1,0 @@
-baseURL = ""
-languageCode = "en-us"
-title = "Felipe Mendes - Blog"
-theme = "tale"
-
-[params]
-    author = "Felipe Mendes"
-    github = "username1"
-    gitlab = "username2"
