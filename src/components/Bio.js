@@ -17,6 +17,24 @@ function Bio() {
               marginBottom: rhythm(2.5),
             }}
           >
+          <Image
+              fixed={data.avatar.childImageSharp.fixed}
+              alt={author}
+              style={{
+                marginRight: rhythm(1 / 2),
+                marginBottom: 0,
+                minWidth: 50,
+                borderRadius: `100%`,
+              }}
+              imgStyle={{
+                borderRadius: `50%`,
+              }}
+            />
+            <p>
+              Escrito por <strong>{author}</strong>.
+              {` `}
+              <a href={`https://github.com/felipemendes`}>GitHub</a> e <a href={`https://www.linkedin.com/in/felipermendes`}>LinkedIn</a>.
+            </p>
           </div>
         )
       }}

@@ -2,8 +2,8 @@ module.exports = {
   siteMetadata: {
     title: `Felipe Mendes`,
     author: `Felipe Mendes`,
-    description: `Blog sobre desenvolvimento.`,
-    siteUrl: `/`
+    description: `Blog sobre desenvolvimento Swift.`,
+    siteUrl: `https://felipemendes.netlify.com/`,
   },
   plugins: [
     {
