@@ -1,7 +1,7 @@
 ---
 title: "Trabalhando com cores no Xcode"
 date: 2019-01-02T12:14:35-02:00
-draft: true
+draft: false
 ---
 
 A partir da versão 9 do Xcode é possível criar e utilizar seu próprio catálogo de cores (Named Colors) no arquivo `Assets.xcassets`.  O conjunto de cores não se limita ao arquivo padrão de assets. É possível criar um novo arquivo `.xcassets` especialmente para armazenar as cores.
@@ -53,7 +53,7 @@ extension UIColor {
 }
 ```
 
-### Muito verboso :unamused:
+### Muito verboso
 
 Precisamos concordar que utilizar cores por mais prático que seja ainda é muito verboso.
 
