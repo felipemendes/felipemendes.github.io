@@ -8,7 +8,7 @@ Localização é o processo para habilitar o suporte de vários idiomas no seu a
 
 Visto que o ingês é o idioma que as linguagens normalmente são escritas, muitos programadores adotam a língua inglesa para nomear dados no código, como funções, variáveis, etc. Dessa forma não há alteração de contexto entre o idioma da linguagem de programação com o português, por exemplo. Com isso, o uso da Localização possibilita que a aplicação seja escrita em um único idioma. Isso facilita o desenvolvimento em times que possuem pessoas com nacionalidades diferentes.
 
-### Habiltar localização no Xcode
+### Habilitar localização no Xcode
 
 Por padrão, ao criar um novo projeto o Xcode já possui habilitado a opção **Use Base Internationalization**. Basta conferir se está marcado na sessão *Localizations* em *Project Navigator*. Essa opção gera automaticamente a estrutura de arquivos para a linguagem global, normalmente usa o inglês como base.
 
