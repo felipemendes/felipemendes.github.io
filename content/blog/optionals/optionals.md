@@ -4,9 +4,9 @@ date: 2019-02-07T12:24:21-02:00
 draft: false
 ---
 
-Em Swift, *Optional*, ou para muitos apenas os sinais `?` e `!`, é uma solução segura para acessar valores não existentes. Conforme a documentação da Apple *Optional* é um tipo que representa um valor empacotado (wrapped) ou nulo (*nil*, ausência de um valor).
+Em Swift, *Optional* (ou para muitos, apenas os sinais `?` e `!`) é uma solução segura para acessar valores não existentes. Conforme a documentação da Apple, *Optional* é um tipo que representa um valor empacotado (*wrapped*) ou nulo (*nil*, ausência de um valor).
 
-*Optional* é basicamente um *enum* e essencialmente parece com isso
+*Optional* é basicamente um *enum* e essencialmente se parece com isso
 
 ```swift
 enum Optional<T> {
@@ -15,7 +15,7 @@ enum Optional<T> {
 }
 ```
 
-Onde *<T>* é um tipo genérico como Array ou Dicionário. Mas este tipo é tão importante que possui muitas sintaxes especiais que outros tipos que não possuem. Algumas são:
+Onde *T* é um tipo genérico como Array ou Dicionário. Mas o tipo *Optional* é tão importante que possui muitas sintaxes especiais que outros tipos não possuem. Algumas são:
 
 - O *case* sem valor recebe a palavra reservada **nil**
 - O sinal `?` é utilizado para declarar um *Optional*
@@ -23,10 +23,10 @@ Onde *<T>* é um tipo genérico como Array ou Dicionário. Mas este tipo é tão
 
 ### Forced Unwrapping
 
-Neste *unwrap* o sinal `!` é utilizado diretamente para recuperar o valor associado. Não há nenhum tipo de validação para assegurar que o valor realmente existe. Basicamente, estamos dizendo que temos certeza que há algo para ser extraído. Esse é o método não seguro e não recomendado, uma vez que a variável pode estar vazia e um erro fatal será exibido e o aplicativo será fechado. Isto é um erro admissível.
+Neste desempacotamento (*unwrap*) o sinal `!` é utilizado diretamente para recuperar o valor associado. Não há nenhum tipo de validação para assegurar que o valor realmente existe. Basicamente, estamos dizendo que temos certeza que há algo para ser extraído. Esse é o método não seguro e não recomendado, uma vez que a variável pode estar vazia e um erro fatal será exibido e o aplicativo será fechado. Este é um erro admissível.
 
 ```swift
-    var driverLicense: Int? // declara da variável
+    var driverLicense: Int? // declara a variável
     driverLicense! // retorna erro
 
     driverLicense = 1234 // associa valor
@@ -35,7 +35,9 @@ Neste *unwrap* o sinal `!` é utilizado diretamente para recuperar o valor assoc
 
 ### Optional Binding
 
-Diferente do `Forced Unwrapping` o `Optional Binding` é a forma mais eficaz e segura para extrair o valor de uma variável ou constante. Permite verificar se o *optional* contém o valor antes de utilizá-lo. Quando há valor este pode ser utilizado temporariamente dentro da declaração. A verificação pode ser feita utilizando qualquer declaração condicional. Este método é mais recomendado que os demais.
+Diferente do `Forced Unwrapping` o `Optional Binding` é a forma mais eficaz e segura para extrair o valor de uma variável ou constante. Permite verificar se o *optional* contém valor antes de utilizá-lo. Quando há valor este pode ser utilizado temporariamente dentro da declaração.
+
+A verificação pode ser feita utilizando qualquer declaração condicional. O `Optional Binding` é mais recomendado que os demais métodos.
 
 ```swift
     let hello: String? = "Hello"
@@ -46,7 +48,7 @@ Diferente do `Forced Unwrapping` o `Optional Binding` é a forma mais eficaz e s
     }
 ```
 
-#### Utilizando declaração **if**
+##### Utilizando declaração **if**
 
 ```swift
     if let greeting = hello {
@@ -56,23 +58,23 @@ Diferente do `Forced Unwrapping` o `Optional Binding` é a forma mais eficaz e s
     }
 ```
 
-Caso necessário alterar o valor consultado dentro da declaraçào pode-se utilizar o **if var**
+Caso necessário alterar o valor consultado dentro da declaração pode-se utilizar o **if var**
 
 ```swift
-    if let greeting = hello {
+    if var greeting = hello {
         print(greeting) // retorna *"Hello"*
-        greeting = "Olá"
+        greeting = "Olá" // altera valor da variável
         print(greeting) // retorna *"Olá"*
     } else {
         // retorna erro
     }
 ```
 
-Tanto com *if let* quanto *if var* o valor somente existe dentro do escopo da declaração. Portanto sua mudança não tem efeito fora do escopo. A alternativa para armazenar o valor extraído e ainda utilizá-lo fora do escopo é substituir a sintaxe *if* para *guard*.
+Tanto com *if let* quanto *if var* o valor somente existe dentro do escopo da declaração. Portanto sua mudança não tem efeito fora do bloco de validação. A alternativa para armazenar o valor extraído e ainda utilizá-lo fora do escopo é substituir a sintaxe *if* para *guard*.
 
-#### Utilizando declaração **guard**
+##### Utilizando declaração **guard**
 
-A declaração de guarda é simples e poderosa. Ela realiza verificação da condição e, se o valor for *nil*, a instrução else será executada e sairá do método. Se houver valor a informação desembrulhada é armazenada e pode ser acessar diretamente sem a necessidade de um novo *unwrap*.
+A declaração `guard` é simples e muito poderosa. Ela realiza verificação da condição e, se o valor for *nil*, a instrução `else` será executada e sairá do método. Se houver valor a informação desembrulhada é armazenada e pode ser acessar diretamente sem a necessidade de um novo *unwrap*.
 
 ```swift
     guard let greeting = hello else { return }
@@ -117,7 +119,7 @@ Dessa forma o método *print* retornará *"Testing"*. Se a variável *x* não ho
 
 ### Optional Chaining
 
-`Optional Chaining` é o recurso que permite chamar propriedades e métodos em um *Opcional* que pode ser nulo. Ao contrário do `Implicitly Unwrapped`, o `Optional Chaining` não retorna um erro fatal quando o valor é nulo.
+`Optional Chaining` é o recurso que permite chamar propriedades e métodos em um *Optional* que pode ser nulo. Ao contrário do `Implicitly Unwrapped`, o `Optional Chaining` não retorna um erro fatal quando o valor é nulo.
 
 ```swift
     class Person {
