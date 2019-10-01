@@ -47,8 +47,8 @@ Git Alias:
 * **alias** = ! git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /
 * **email** = config user.email
 * **erase** = checkout -- .
-* **df**-all-files = !git submodule foreach --recursive git diff --name-status
-* **df**-all = !git diff --submodule=diff
+* **df-all-files** = !git submodule foreach --recursive git diff --name-status
+* **df-all** = !git diff --submodule=diff
 
 Para aumentar a produtividade no desenvolvimento utilize frequentementes os seguintes atalhos no *Terminal* e *[VIM](https://www.vim.org/)*:
 
