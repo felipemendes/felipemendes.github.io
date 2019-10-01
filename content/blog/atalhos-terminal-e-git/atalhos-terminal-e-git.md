@@ -19,13 +19,13 @@ Este *post* tem como propósito em apenas listar armazenar meus *alisases* e com
 
 Git Alias:
 
-* **ac** = !git add -A && git commit -m
 * **bump** = commit -m 'Bump version number'
 * **minor** = commit -m 'Make minor changes'
 * **open** = remote -v | awk '/origin.*push/ {print $2}' | xargs open
 * **save** = !git add -A && git commit -m 'SAVEPOINT'
-* **search** = !f() { git log -S "$@"; }; f
+* **search** = "!f() { git log -S \"$@\"; }; f"
 * **amend** = commit -a --amend
+* **ac** = !git add -A && git commit -m
 * **df** = diff
 * **as** = add -u
 * **po** = push origin
@@ -33,41 +33,22 @@ Git Alias:
 * **cob** = checkout -b
 * **cm** = commit -m
 * **st** = status
+* **stl** = !ls -l && git st
 * **stb** = status -sb
 * **tags** = tag -l
 * **undo** = reset HEAD~1 --mixed
 * **branches** = branch -a
 * **remotes** = remote -v
 * **br** = branch
-* **hist** = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+* **bra** = branch -a
+* **hist** = log --pretty=format:'%h %ad (%ar) | %s%d | %an' --graph --date=short --since=4.weeks
 * **type** = cat-file -t
 * **dump** = cat-file -p
-* **alias** = ! git config --get-regexp ^alias\. | sed -e s/^alias\.// -e s/\ /\ =\ /
-* **1** = 'cd -'
-* **2** = 'cd -2'
-* **3** = 'cd -3'
-* **4** = 'cd -4'
-* **5** = 'cd -5'
-* **6** = 'cd -6'
-* **7** = 'cd -7'
-* **8** = 'cd -8'
-* **9** = 'cd -9'
-* **_** = sudo
-* **afind** = 'ack -il'
-* **d** = 'dirs -v | head -10'
-* **globurl** = 'noglob urlglobber '
-* **grep** = 'grep  --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
-* **history** = omz_history
-* **l** = 'ls -lah'
-* **la** = 'ls -lAh'
-* **ll** = 'ls -lh'
-* **ls** = 'ls -G'
-* **lsa** = 'ls -lah'
-* **md** = 'mkdir -p'
-* **please** = sudo
-* **rd** = rmdir
-* **run** - help=man
-* **which** - command=whence
+* **alias** = ! git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /
+* **email** = config user.email
+* **erase** = checkout -- .
+* **df**-all-files = !git submodule foreach --recursive git diff --name-status
+* **df**-all = !git diff --submodule=diff
 
 Para aumentar a produtividade no desenvolvimento utilize frequentementes os seguintes atalhos no *Terminal* e *[VIM](https://www.vim.org/)*:
 
