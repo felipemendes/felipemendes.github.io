@@ -1,6 +1,6 @@
 ---
 title: "Função com parâmetro In-Out"
-date: 2019-01-02T08:14:51-02:00
+date: 2019-10-02T08:14:51-02:00
 draft: false
 ---
 
