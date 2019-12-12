@@ -14,7 +14,7 @@ Esse é o resultado final:
 
 ![Chuck Facts](chuck-facts.png)
 
-# Iniciando
+## Iniciando
 
 Para facilitar a identificação e divisão de tarefas foi utilizado o GitHub Projects com automação dos *cards* com as *issues* do projeto. O quadro criado se chama MLP (*Minimum Loveable Product*) e pode ser encontrado [aqui](https://github.com/felipemendes/ChuckFacts/projects/1).
 
@@ -36,7 +36,7 @@ Para facilitar a leitura e integração de novos membros ao projeto utilizo o *s
 
 Nesse projeto optei em utilizar *Cocoapods* por ser um gerenciador muito fácil de configurar e integrar novas dependências ao projeto. Seu uso também é muito simplificado tanto para integração de dependência quanto para a construção de novas bibliotecas, conforme explico [nesta](https://felipemendes.netlify.com/bibliotecas-com-cocoapods/bibliotecas-com-cocoapods/) postagem.
 
-# Arquitetura
+## Arquitetura
 
 Tentei organizar ao máximo o código por *módulos/features*. Isso facilita a identificação de códigos relacionados para correção e adição de novos recursos mais facilmente no futuro. Essa organização responde à pergunta “O que esse aplicativo faz?” em vez de “O que é esse arquivo ou o que ele faz?”. O maior benefício é tornar tudo modular e facilitar tanto o desenvolvimento quanto os testes.
 
