@@ -14,11 +14,11 @@ Dessa maneira, será necessário cadastrar o código das cores uma única vez. I
 
 Com o arquivo `.xcassets` aberto na listagem dos assets aparece a opção `New Color Set` no menu de contexto.
 
-![Adicionar cor](adicionar-cor.png)
+![Adicionar cor](../assets/trabalhando-com-cores-no-xcode/adicionar-cor.png)
 
 Em seguida, você pode definir o nome e o valor da cor com o formato de preferência direto no *Attributes inspector*.
 
-![Nova cor](nova-cor.png)
+![Nova cor](../assets/trabalhando-com-cores-no-xcode/nova-cor.png)
 
 ### Acessando o catálogo de cores
 
@@ -61,4 +61,4 @@ Para isso temos outra maneira mais visual de obter o mesmo resultado. Ao digital
 
 Porém não é possível acessar as `Named Colors` pelo `Color Literal`. Mas o código fica mais fácil de visualizar as cores pois sua representação é totalmente visual:
 
-![Color Literal](color-literal.png)
+![Color Literal](../assets/trabalhando-com-cores-no-xcode/color-literal.png)

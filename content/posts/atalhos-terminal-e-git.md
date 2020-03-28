@@ -1,9 +1,7 @@
 ---
 title: "Atalhos de Terminal e Git"
 date: 2019-09-30T20:46:53-02:00
-draft: false
 ---
-
 
 Fato notório que o uso de *terminal* é indispensável para muitos programadores. Seja para o gerenciamento de versão dos projetos ou tarefas rotineiras passamos muito tempo com o interpretador de comandos aberto no nosso dia a dia.
 

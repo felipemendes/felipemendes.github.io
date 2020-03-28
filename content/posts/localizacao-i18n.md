@@ -12,33 +12,33 @@ Visto que o ingês é o idioma que as linguagens normalmente são escritas, muit
 
 Por padrão, ao criar um novo projeto o Xcode já possui habilitado a opção **Use Base Internationalization**. Basta conferir se está marcado na sessão *Localizations* em *Project Navigator*. Essa opção gera automaticamente a estrutura de arquivos para a linguagem global, normalmente usa o inglês como base.
 
-![Use Base Internationalization](use-base-internationalization.png)
+![Use Base Internationalization](../assets/localizacao-i18n/use-base-internationalization.png)
 
 ### Adicionar novos idiomas
 
 No *Project Navigator* clique no sinal *+* em *Localizations* e selecione o novo idioma.
 
-![Novo idioma](novo-idioma.png)
+![Novo idioma](../assets/localizacao-i18n/novo-idioma.png)
 
 Será necessário selecionar quais *storyboards* que será aplicado o novo idioma.
 
-![Arquivos para localiaçãza](arquivos-para-localizacao.png)
+![Arquivos para localiaçãza](../assets/localizacao-i18n/arquivos-para-localizacao.png)
 
 Um novo arquivo de localização .strings será criado junto ao *Interface Builder* selecionado. Para aplicar a localização em todo o projeto é necessário criar o arquivo *Localizable.strings*. Anteriormente o Xcode gerava por padrão esse arquivo. Nas versões recentes é necessário gerá-lo manualmente. Para isso selecione **File -> New -> File..** ou o atalho **⌘N**. E na seção **Resources** dos templates selecione **Strings file**. Nomeie o arquivo como **Localizable.strings**.
 
-![Strings File](strings-file.png)
+![Strings File](../assets/localizacao-i18n/strings-file.png)
 
 Em seguida é necessário habilitar o novo idioma no arquivo de *.strings*. Selecione o arquivo **Localizable.strings**, na barra lateral **Inspectors** clique em **Localize..** na seção *Localizations*.
 
-![Localize](localize.png)
+![Localize](../assets/localizacao-i18n/localize.png)
 
 Na caixa de diálogo selecione o idioma padrão (*English*) e clique em **Localize**.
 
-![Aplicar Localize](aplicar-localize.png)
+![Aplicar Localize](../assets/localizacao-i18n/aplicar-localize.png)
 
 Agora no **Inspectors** aparece o idioma que foi adicionado no *Project Navigator*. Basta marcar todos os checkboxs dos idiomas para ser criado cada arquivo .strings.
 
-![Strings novo Idioma](strings-novo-idioma.png)
+![Strings novo Idioma](../assets/localizacao-i18n/strings-novo-idioma.png)
 
 ### Adicionar localizações
 
@@ -50,11 +50,11 @@ Selecione o arquivo **Localizable.strings** de cada idioma e adicione as chaves 
 
 Os arquivos devem possuir as mesmas chaves alterando apenas os respectivos valores de acordo com o idioma. O arquivo em *Localizable.strings (English)* ficaria dessa forma com alguns exemplos:
 
-![Strings English](strings-english.png)
+![Strings English](../assets/localizacao-i18n/strings-english.png)
 
 E o arquivo *Localizable.strings (Portuguese (Brazil))* assim:
 
-![Strings Portuguese](strings-portuguese.png)
+![Strings Portuguese](../assets/localizacao-i18n/strings-portuguese.png)
 
 ### Utilizar localizações
 

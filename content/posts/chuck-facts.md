@@ -12,7 +12,7 @@ Existem várias maneiras de se resolver um problema. No entanto, a maneira que o
 
 Este é o resultado final:
 
-![Chuck Facts](chuck-facts.png)
+![Chuck Facts](../assets/chuck-facts/chuck-facts.png)
 
 ## Iniciando
 

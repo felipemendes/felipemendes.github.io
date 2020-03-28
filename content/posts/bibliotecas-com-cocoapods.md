@@ -1,7 +1,6 @@
 ---
 title: "Bibliotecas com CocoaPods"
 date: 2019-03-28T11:39:01-02:00
-draft: false
 ---
 
 A maioria das linguagens modernas possuem soluções para distribuição de código. Por exemplo, JavaScript tem o [NPM](https://www.npmjs.com/), PHP o [Composer](https://getcomposer.org/), .NET o [Nuget](https://getcomposer.org/), entre outras. Em iOS não é diferente, a Apple possui o próprio gerenciador de tarefas chamado [Swift Package Manager](https://swift.org/package-manager/) para compartilhar e distribuir pacotes em Swift. Porém este não é muito utilizado ainda por grande parte dos desenvolvedores. A maioria opta por outros gerenciadores de tarefas não oficiais da Apple que são [CocoaPods](https://cocoapods.org/) e [Carthage](https://github.com/Carthage/Carthage), ambos open source.
@@ -12,7 +11,7 @@ Visto que estes são mais utilizados irei detalhar como é a criação e distrib
 
 Bibliotecas do CocoaPods utilizam o tipo *Cocoa Touch Framework*, portanto basta iniciar um novo projeto no *Xcode* com este template selecionado.
 
-![Cocoa Touch Framework](cocoa-touch-framework.png)
+![Cocoa Touch Framework](../assets/bibliotecas-com-cocoapods/cocoa-touch-framework.png)
 
 Certifique-se que o checkbox *Include Unit Tests* esteja marcado para aplicarmos os testes unitários no projeto.
 
@@ -47,7 +46,7 @@ public final class iHash {
 
 A estrutura do projeto e o conteúdo do arquivo deverá ficar dessa forma:
 
-![iHash](iHash.png)
+![iHash](../assets/bibliotecas-com-cocoapods/iHash.png)
 
 ## Criando o teste unitário
 
@@ -68,7 +67,7 @@ func testMD5() {
 
 Ao executar o teste a validação deve passar e será exibido um resumo dos métodos verificados.
 
-![Teste unitário](teste-unitario.png)
+![Teste unitário](../assets/bibliotecas-com-cocoapods/teste-unitario.png)
 
 ## Publicando a biblioteca
 

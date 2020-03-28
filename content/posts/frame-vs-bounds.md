@@ -12,7 +12,7 @@ Essa é uma dúvida que sempre desenvolvedores normalmente têm durante o desenv
 
 A imagem abaixo demonstra uma tela que possui uma imagem com tamanho de 100x100 (largura e altura) posicionada à 25,25 (x e y):
 
-![Frame vs Bounds](frame-vs-bounds.png)
+![Frame vs Bounds](../assets/frame-vs-bounds/frame-vs-bounds.png)
 
 Como podemos notar, **frame** é o espaço considerando a *View* superior (*superview*) e **bounds** é o espaço da imagem isolada.
 

@@ -10,14 +10,14 @@ Swift tem um mecanismo embutido na linguagem que permite o cálculo [just-in-tim
 
 No exemplo abaixo foram criadas quatro variáveis, duas com o indicador `lazy` e duas sem. Um `breakpoint` foi habilitado no início da função `viewDidLoad` e quando esta é invocada **somente** as propriedades sem o indicador `lazy` são criadas. Podemos confirmar no painel Debug:
 
-![Var criada](var-criada.png)
+![Var criada](../assets/lazy-var/var-criada.png)
 
 Ao avançar a execução do código, as propriedades do tipo `lazy` somente são criadas em tempo de execução.
 
-![Lazy var criada 1](lazy-var-criada-1.png)
+![Lazy var criada 1](../assets/lazy-var/lazy-var-criada-1.png)
 
-![Lazy var criada 2](lazy-var-criada-2.png)
+![Lazy var criada 2](../assets/lazy-var/lazy-var-criada-2.png)
 
 Essa prática tem diversas utilidades e é muito comum em propriedades computadas. No exemplo abaixo a propriedade `lazy var fullName` somente será criada na memória quando invocada. E como não foi chamada no teste não houve desperdício de memória, mesmo o objeto sendo instanciado.
 
-![Lazy var não invocada](lazy-var-nao-invocada.png)
+![Lazy var não invocada](../assets/lazy-var/lazy-var-nao-invocada.png)

@@ -1,7 +1,6 @@
 ---
 title: "Template customizado no Xcode"
 date: 2019-04-29T12:09:14-02:00
-draft: false
 ---
 
 Xcode possui diversos modelos para criação de novos arquivos. Cada modelo é um padrão de estrutura criado pela Apple. E também é possível criar uma estrutura customizada que melhor adapta ao seu estilo de desenvolvimento. Este post mostra como criar seu próprio modelo.
@@ -65,8 +64,8 @@ class ___FILEBASENAMEASIDENTIFIER___: UIViewController {
 
 A partir de agora ao criarmos um novo arquivo no Xcode o novo modelo será apresentado na sessão `Custom`:
 
-![Template customizado no Xcode](xcode-templates-customizados.png)
+![Template customizado no Xcode](../assets/xcode-templates-customizados/xcode-templates-customizados.png)
 
 E com o seguinte conteúdo:
 
-![Conteúdo Template customizado](conteudo-template-customizado.png)
+![Conteúdo Template customizado](../assets/xcode-templates-customizados/conteudo-template-customizado.png)
