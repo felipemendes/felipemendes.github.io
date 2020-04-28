@@ -8,7 +8,7 @@ Este `framework` é responsável por enviar notificações para o dispositivo do
 
 Para notificações locais, o aplicativo cria o conteúdo da notificação e especifica uma condição, como um horário, local ou data, que aciona a entrega da notificação. Para notificações remotas (também conhecidas como *push notifications*), é necessário utilizar um servidor para gerar as notificações, e o serviço de notificação por push da Apple (APNs) que lida com a entrega dessas notificações para os dispositivos.
 
-Segundo à [documentação](https://developer.apple.com/documentation/usernotifications) da Apple, o `framework` *UserNotifications* faz todas as tentativas para entregar as notificações locais e remotas em tempo hábil, mas a entrega não é garantida. O uso do *PushKit* oferece um mecanismo de entrega mais oportuno para tipos específicos de notificações, como aquelas usadas para complicações de *VoIP* e *watchOS*.
+Segundo a [documentação](https://developer.apple.com/documentation/usernotifications) da Apple, o `framework` *UserNotifications* faz todas as tentativas para entregar as notificações locais e remotas em tempo hábil, mas a entrega não é garantida. O uso do *PushKit* oferece um mecanismo de entrega mais oportuno para tipos específicos de notificações, como aquelas usadas para complicações de *VoIP* e *watchOS*.
 
 Vale lembrar que o uso de notificações devem ser utilizadas com responsabilidade e seguindo as sugestões da Apple:
 - Enviar notificações apenas quando forem relevantes
@@ -187,13 +187,12 @@ class ViewController: UIViewController {
 
 Da mesma forma que é possível agendar uma notificação, também podemos cancelar ou remover um agendamento da central de notificações.
 
-Este processo pode ser feito através do identificador:
+Este processo pode ser feito através do identificador. É possível remover notificações pendentes e notificações que já foram entregues e ainda estão na central de notificações do iOS:
 
 ```swift
 notificationCenter.removePendingNotificationRequests(withIdentifiers: ["identifier"])
+notificationCenter.removeDeliveredNotifications(withIdentifiers: ["identifier"])
 ```
-
-> notificationCenter.removeDeliveredNotifications(withIdentifiers: identifiers)
 
 Seguindo o exemplo do agendamento, o cancelamento ficaria dessa forma:
 
