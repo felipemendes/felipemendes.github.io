@@ -1,19 +1,19 @@
 import merge from "deepmerge"
 import defaultThemeColors from "gatsby-theme-blog/src/gatsby-plugin-theme-ui/colors"
 
-const blue = `#051627`
-const white = `#fff`
-const darkBackground = `#222`
+const darkBlue = `#007acc`
+const lightBlue = `#66E0FF`
+const blueGray = `#282c35`
 
 export default merge(defaultThemeColors, {
-  text: darkBackground,
-  primary: blue,
-  heading: darkBackground,
+  text: blueGray,
+  primary: darkBlue,
+  heading: blueGray,
   modes: {
     dark: {
-      background: darkBackground,
-      primary: white,
-      highlight: white,
+      background: blueGray,
+      primary: lightBlue,
+      highlight: lightBlue,
     },
   },
 })
