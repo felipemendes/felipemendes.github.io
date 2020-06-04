@@ -17,9 +17,9 @@ Vale lembrar que o uso de notificações devem ser utilizadas com responsabilida
 
 ### Configuração
 
-Neste postagem vou focar na criação de notificações locais, pois esta configuração é semelhante às notificações remotas, porém sem o trabalho necessário do servidor. Como em muitos serviços da Apple, onde a privacidade pode ser um problema, precisamos solicitar autorização para enviar notificações ao usuário primeiro.
+Nesta postagem vou focar na criação de notificações locais, pois esta configuração é semelhante às notificações remotas, porém sem o trabalho necessário do servidor. Como em muitos serviços da Apple, onde a privacidade pode ser um problema, precisamos primeiro solicitar ao usuário a autorização para receber notificações.
 
-Geralmente deseja-se solicitar autorização para notificações o mais cedo possível, caso contrário, as notificações recebidas antes da concessão do acesso não serão exibidas. A Apple sugere concluir isso ao iniciar o aplicativo usando o método aplicativo: `application:didFinishLaunchingWithOptions:`.
+Geralmente deseja-se solicitar autorização para notificações o mais cedo possível, caso contrário, as notificações recebidas antes da concessão do acesso não serão exibidas. A Apple sugere concluir isso ao iniciar o aplicativo através do método: `application:didFinishLaunchingWithOptions:`.
 
 Na classe do `AppDelegate` é necessário importar o `framework` *UserNotifications*:
 
@@ -27,7 +27,7 @@ Na classe do `AppDelegate` é necessário importar o `framework` *UserNotificati
 import UserNotifications
 ```
 
-Nas propriedades da classe, crie uma nova propriedade e atribua uma instância da classe `UNUserNotificationCenter` à ela. Esta será responsável por gerenciar as notificações, ou seja, nossa central de notificações.
+No cabeçalho da classe, crie uma nova propriedade e atribua uma instância da classe `UNUserNotificationCenter` à ela. Esta será responsável por gerenciar as notificações, ou seja, nossa central de notificações.
 
 ```swift
 let notificationCenter = UNUserNotificationCenter.current()
@@ -49,12 +49,12 @@ notificationCenter.requestAuthorization(options: options) { didAllow, error in
 }
 ```
 
-Caso o usuário não autorize ou altere esta preferência nas configurações do aplicativo, é possível rastrear esta modifição através da propriedade `getNotificationSettings`. Essa chamada contém um *completion block* que chama `UNNotificationSettings`, que pode ser usado para verificar o status da autorização ou de certos parâmetros de notificação.
+Caso o usuário não autorize ou altere esta preferência nas configurações do aplicativo, é possível rastrear esta modifição através da propriedade `getNotificationSettings`. Essa chamada contém um *completion block* que invoca  `UNNotificationSettings` e pode ser usada para verificar o status da autorização ou de certos parâmetros de notificação.
 
 ```swift
 notificationCenter.getNotificationSettings { settings in
   if settings.authorizationStatus != .authorized {
-	// Notifications not allowed
+	print("Notifications not allowed")
   }
 } 
 ```
