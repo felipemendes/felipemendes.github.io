@@ -35,4 +35,4 @@ extension XCTestCase {
 }
 ```
 
-Os parâmetros `file` e `line` ajudam a exibir a falha direto no método de teste ao invés do método da nossa extensão.
+Os parâmetros `file` e `line` ajudam a exibir a falha direto no método de teste ao invés de apontar o erro no método da nossa extensão.
