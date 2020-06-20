@@ -12,7 +12,7 @@ Segundo a documentação:
 
 - Decodable: Um tipo que pode **decodificar a partir** de uma representação externa.
 
-Uma maneira de utilizar ambos protocolos em uma mesma entidade é utilizar o `alias` **Codable**. Portanto, esse tipo permite codificar e decodificar um formato diferente.
+Uma maneira de utilizar ambos protocolos em uma mesma entidade é conformar com o `alias` **Codable**. O `Codable` foi introduzido no `Swift 4` como substituto ao `NSCoding`. Portanto, esse tipo permite codificar e decodificar para formatos diferentes.
 
 Ao informar que uma entidade conforma com estes protocolos é necessário que todas as suas propriedades também conformem com o protocolo indicado. Muitos tipos comuns do [Swift Standard Library](https://developer.apple.com/documentation/swift/swift_standard_library) e [Foundation](https://developer.apple.com/documentation/foundation) são `codable` por padrão. Quando houver um tipo customizado, é necessário que este também se conforme com o protocolo.
 
