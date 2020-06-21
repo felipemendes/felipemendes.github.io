@@ -26,11 +26,11 @@ Onde *T* é um tipo genérico como Array ou Dicionário. Mas o tipo *Optional* �
 Neste desempacotamento (*unwrap*) o sinal `!` é utilizado diretamente para recuperar o valor associado. Não há nenhum tipo de validação para assegurar que o valor realmente existe. Basicamente, estamos dizendo que temos certeza que há algo para ser extraído. Esse é o método não seguro e não recomendado, uma vez que a variável pode estar vazia e um erro fatal será exibido e o aplicativo será fechado. Este é um erro admissível.
 
 ```swift
-    var driverLicense: Int? // declara a variável
-    driverLicense! // retorna erro
+var driverLicense: Int? // declara a variável
+driverLicense! // retorna erro
 
-    driverLicense = 1234 // associa valor
-    driverLicense! // retorna 1234
+driverLicense = 1234 // associa valor
+driverLicense! // retorna 1234
 ```
 
 ### Optional Binding
@@ -40,34 +40,34 @@ Diferente do `Forced Unwrapping` o `Optional Binding` é a forma mais eficaz e s
 A verificação pode ser feita utilizando qualquer declaração condicional. O `Optional Binding` é mais recomendado que os demais métodos.
 
 ```swift
-    let hello: String? = "Hello"
-    
-    switch hello {
-        case .some(let data): print(data)
-        case .none: // retorna erro
-    }
+let hello: String? = "Hello"
+
+switch hello {
+    case .some(let data): print(data)
+    case .none: // retorna erro
+}
 ```
 
 ##### Utilizando declaração **if**
 
 ```swift
-    if let greeting = hello {
-        print(greeting)
-    } else {
-        // retorna erro
-    }
+if let greeting = hello {
+    print(greeting)
+} else {
+    // retorna erro
+}
 ```
 
 Caso necessário alterar o valor consultado dentro da declaração pode-se utilizar o **if var**
 
 ```swift
-    if var greeting = hello {
-        print(greeting) // retorna *"Hello"*
-        greeting = "Olá" // altera valor da variável
-        print(greeting) // retorna *"Olá"*
-    } else {
-        // retorna erro
-    }
+if var greeting = hello {
+    print(greeting) // retorna *"Hello"*
+    greeting = "Olá" // altera valor da variável
+    print(greeting) // retorna *"Olá"*
+} else {
+    // retorna erro
+}
 ```
 
 Tanto com *if let* quanto *if var* o valor somente existe dentro do escopo da declaração. Portanto sua mudança não tem efeito fora do bloco de validação. A alternativa para armazenar o valor extraído e ainda utilizá-lo fora do escopo é substituir a sintaxe *if* para *guard*.
@@ -77,19 +77,19 @@ Tanto com *if let* quanto *if var* o valor somente existe dentro do escopo da de
 A declaração `guard` é simples e muito poderosa. Ela realiza verificação da condição e, se o valor for *nil*, a instrução `else` será executada e sairá do método. Se houver valor a informação desembrulhada é armazenada e pode ser acessar diretamente sem a necessidade de um novo *unwrap*.
 
 ```swift
-    guard let greeting = hello else { return }
+guard let greeting = hello else { return }
 
-    print(greeting)
+print(greeting)
 ```
 
 Da mesma forma do *if var* podemos substituir por *guard var* quando é necessário alterar valor *unwrapped*.
 
 ```swift
-    guard var greeting = hello else { return }
+guard var greeting = hello else { return }
 
-    print(greeting) // retorna *"Hello"*
-    greeting = "Olá"
-    print(greeting) // retorna *"Olá"*
+print(greeting) // retorna *"Hello"*
+greeting = "Olá"
+print(greeting) // retorna *"Olá"*
 ```
 
 ### Implicitly Unwrapped Optionals
@@ -99,9 +99,9 @@ Da mesma forma do *if var* podemos substituir por *guard var* quando é necessá
 Ao acessar a variável/constante utilizando a forma implícita, mesmo que não tenha nenhum valor atribuído, o retorno será bem-sucedido. Mas cuidado, se tentarmos manipular essa informação invocando algum método, por exemplo, o retorno será um erro fatal.
 
 ```swift
-    var greeting: String!
-    print(greeting) // retorna *nil*
-    print(greeting.count) // FATAL ERROR. Terminated by signal 4
+var greeting: String!
+print(greeting) // retorna *nil*
+print(greeting.count) // FATAL ERROR. Terminated by signal 4
 ```
 
 ### Nil Coalescing
@@ -109,10 +109,10 @@ Ao acessar a variável/constante utilizando a forma implícita, mesmo que não t
 Maneira de definir um valor padrão quando o *Optional* for *nil*. Há algumas formas de fazer esta ação como **declaração condicional** e **operador ternário**. Mas o *Nil Coalescing* nos permite encurtar isso ainda mais com os sinais `??`.
 
 ```swift
-    var x: String?
-    x = "Testing"
-    let y = x ?? "foo"
-    print(y)
+var x: String?
+x = "Testing"
+let y = x ?? "foo"
+print(y)
 ```
 
 Dessa forma o método *print* retornará *"Testing"*. Se a variável *x* não houvesse valor associado o *print* retornaria *"foo"*.
@@ -122,23 +122,23 @@ Dessa forma o método *print* retornará *"Testing"*. Se a variável *x* não ho
 `Optional Chaining` é o recurso que permite chamar propriedades e métodos em um *Optional* que pode ser nulo. Ao contrário do `Implicitly Unwrapped`, o `Optional Chaining` não retorna um erro fatal quando o valor é nulo.
 
 ```swift
-    class Person {
-        var residence: Residence?
-    }
+class Person {
+    var residence: Residence?
+}
 
-    class Residence {
-        var numberOfRooms = 1
-    }
+class Residence {
+    var numberOfRooms = 1
+}
 
-    let john = Person()
+let john = Person()
 
-    let roomCount = john.residence!.numberOfRooms // FATAL ERROR. Terminated by signal 4
+let roomCount = john.residence!.numberOfRooms // FATAL ERROR. Terminated by signal 4
 
-    if let roomCount = john.residence?.numberOfRooms {
-        print("John's residence has \(roomCount) room(s).")
-    } else {
-        print("Unable to retrieve the number of rooms.") // retorna aqui
-    }
+if let roomCount = john.residence?.numberOfRooms {
+    print("John's residence has \(roomCount) room(s).")
+} else {
+    print("Unable to retrieve the number of rooms.") // retorna aqui
+}
 ```
 
 Visualmente esta é a melhor forma de *unwrap* e também recomendada.

@@ -1,5 +1,5 @@
 ---
-title: "Trabalhando com cores no Xcode"
+title: "Cores no Xcode"
 date: "2019-01-02T12:14:35-02:00"
 description: ""
 ---

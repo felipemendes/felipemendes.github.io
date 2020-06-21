@@ -4,7 +4,7 @@ date: "2019-06-29T12:11:32-02:00"
 description: ""
 ---
 
-Essa é uma dúvida que sempre desenvolvedores normalmente têm durante o desenvolvimento de algum projeto. De forma resumida podemos definir *Frame* e *Bounds* da seguinte maneira:
+Essa é uma dúvida que desenvolvedores normalmente têm durante o desenvolvimento de algum projeto. De forma resumida podemos definir *Frame* e *Bounds* da seguinte maneira:
 
 - *Frame*: é o espaço, expresso por uma posição (x e y) e um tamanho (largura e altura), **relativo à *View* superior (*superview*) onde está contido**.
 
@@ -19,23 +19,23 @@ Como podemos notar, **frame** é o espaço considerando a *View* superior (*supe
 O código abaixo exibe os valores de *frame* e *bounds* desse exemplo:
 
 ```swift
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        print("frame.origin.x: \(myImage.frame.origin.x)");
-        print("frame.origin.y: \(myImage.frame.origin.y)");
-        print("frame.size.width: \(myImage.frame.size.width)");
-        print("frame.size.height: \(myImage.frame.size.height)");
+override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    print("frame.origin.x: \(myImage.frame.origin.x)");
+    print("frame.origin.y: \(myImage.frame.origin.y)");
+    print("frame.size.width: \(myImage.frame.size.width)");
+    print("frame.size.height: \(myImage.frame.size.height)");
 
-        print("bounds.origin.x: \(myImage.bounds.origin.x)");
-        print("bounds.origin.y: \(myImage.bounds.origin.y)");
-        print("bounds.size.width: \(myImage.bounds.size.width)");
-        print("bounds.size.height: \(myImage.bounds.size.height)");
-        
-    }
+    print("bounds.origin.x: \(myImage.bounds.origin.x)");
+    print("bounds.origin.y: \(myImage.bounds.origin.y)");
+    print("bounds.size.width: \(myImage.bounds.size.width)");
+    print("bounds.size.height: \(myImage.bounds.size.height)");
+    
+}
 ```
 
-A seguinte informação é exibida:
+No console é exibido as seguintes informações:
 
 ```
 frame.origin.x: 25.0

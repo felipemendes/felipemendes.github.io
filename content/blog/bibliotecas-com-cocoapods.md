@@ -16,7 +16,7 @@ Bibliotecas do CocoaPods utilizam o tipo *Cocoa Touch Framework*, portanto basta
 
 Certifique-se que o checkbox *Include Unit Tests* esteja marcado para aplicarmos os testes unitários no projeto.
 
-![Include Unit Tests](include-unit-tests.png)
+![Include Unit Tests](../assets/bibliotecas-com-cocoapods/include-unit-tests.png)
 
 Crie um novo arquivo *.swift* com o nome *iHash* dentro do target de mesmo nome. Este arquivo irá conter o comportamento básico da biblioteca. O comportamento é muito simple e possui apenas uma função para gerar o valor *MD5* de uma *string* informada.
 
