@@ -62,7 +62,7 @@ Cada *ViewController*, dentro do *FlowController*, pode ter dependências difere
 
 ## Testes unitários
 
-Para os *unit tests* utilizei somente o framework *XCTest* da Apple. Para cada componente que foi testado foi criado um arquivo de *XCTest* no *target* de testes. Recomenda-se criar uma função para cada comportamento, bem como ser o mais minucioso na descrição da assinatura de cada método. Por outro lado, apesar de não ser aconselhado, também criei testes de requisições dos *endpoints* de produção. O ideal seria realizar os testes em um ambiente de homologação.
+Para os *unit tests* utilizei somente o framework *XCTest* da Apple. Para cada componente que foi testado foi criado um arquivo de *XCTest* no *target* de testes. Recomenda-se criar uma função para cada comportamento, bem como ser o mais minucioso na descrição da assinatura de cada método. Por outro lado, apesar de não ser aconselhado, também criei testes de requisições dos *endpoints* de produção. O ideal seria criar mocks que representam o ambiente.
 
 ## Camada de serviços
 
