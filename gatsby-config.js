@@ -5,13 +5,15 @@ module.exports = {
       name: `Felipe Mendes`,
       summary: ``,
     },
-    description: `Blog sobre desenvolvimento Swift.`,
+    description: `Blog sobre desenvolvimento Swift, iOS e Apple.`,
     siteUrl: `https://felipemendes.netlify.app/`,
     social: {
-      twitter: ``,
+      linkedin: `felipermendes`,
+      github: `felipemendes`
     },
   },
   plugins: [
+    'gatsby-plugin-dark-mode',
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -33,7 +35,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 590,
+              maxWidth: 630,
             },
           },
           {
@@ -70,12 +72,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography`,
-      },
-    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

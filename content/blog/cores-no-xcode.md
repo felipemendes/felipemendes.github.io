@@ -18,7 +18,7 @@ Com o arquivo `.xcassets` aberto na listagem dos assets aparece a opção `New C
 
 Em seguida, você pode definir o nome e o valor da cor com o formato de preferência direto no *Attributes inspector*.
 
-![Nova cor](../assets/trabalhando-com-cores-no-xcode/nova-cor.png)
+![Nova cor](../assets/nova-cor.png)
 
 ### Acessando o catálogo de cores
 
