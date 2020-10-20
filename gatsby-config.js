@@ -5,7 +5,7 @@ module.exports = {
       name: `Felipe Mendes`,
       summary: ``,
     },
-    description: `Blog sobre desenvolvimento Swift, iOS e Apple.`,
+    description: `Blog sobre desenvolvimento iOS, Swift e Apple.`,
     siteUrl: `https://felipemendes.netlify.app/`,
     social: {
       linkedin: `felipermendes`,
@@ -55,7 +55,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
+        trackingId: `UA-132748814-1`,
       },
     },
     `gatsby-plugin-feed`,
@@ -72,8 +72,11 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-plugin-offline`,
+      options: {
+        precachePages: [`/`],
+      },
+    },
   ],
 }

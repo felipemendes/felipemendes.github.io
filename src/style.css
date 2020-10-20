@@ -242,15 +242,6 @@ table thead tr th {
   border-bottom: 1px solid var(--color-accent);
 }
 
-:not(pre) > code[class*="language-"], pre[class*="language-"] {
-  background-color: var(--color-code);
-}
-
-code[class*="language-"], pre[class*="language-"] {
-  color: var(--color-text);
-  text-shadow: 0 0;
-}
-
 /* Link */
 
 a {
@@ -354,4 +345,19 @@ a:focus {
   ol {
     list-style-position: inside;
   }
+}
+
+/* Custom */
+
+:not(pre) > code[class*="language-"], pre[class*="language-"] {
+  background-color: var(--color-code);
+}
+
+code[class*="language-"], pre[class*="language-"] {
+  color: var(--color-text);
+  text-shadow: 0 0;
+}
+
+.token.operator, .token.entity, .token.url, .language-css .token.string, .style .token.string {
+  background: transparent;
 }

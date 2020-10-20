@@ -21,6 +21,7 @@ const Bio = () => {
       }
       site {
         siteMetadata {
+          description
           author {
             name
             summary
@@ -36,8 +37,8 @@ const Bio = () => {
 
   const author = data.site.siteMetadata?.author
   const social = data.site.siteMetadata?.social
-
   const avatar = data?.avatar?.childImageSharp?.fixed
+  const description = data?.site.siteMetadata.description
 
   return (
     <div className="bio">
@@ -53,7 +54,7 @@ const Bio = () => {
       )}
       {author?.name && (
         <p>
-          Blog sobre desenvolvimento Swift, iOS e Apple.
+          {description}
           <br/>
           <a href={`https://github.com/${social?.github || ``}`} target="_blank" rel="noreferrer">GitHub</a> e 
           <a href={`https://www.linkedin.com/in/${social?.linkedin || ``}/`} target="_blank" rel="noreferrer"> LinkedIn</a>
