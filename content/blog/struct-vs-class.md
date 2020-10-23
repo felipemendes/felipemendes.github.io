@@ -32,6 +32,10 @@ Tipos em Swift são categorizados em duas situções: primeiro **value types** o
 
 A característica básica de um **value type** é que o processo de **cópia** cria uma instância independente com sua própria cópia exclusiva de seus dados.
 
+### Value Types e Reference Types na memória
+
+Quando uma **reference type** é criada, como uma Classe, o sistema armazena a instância real em uma região da memória conhecida como **Heap** (porção menor da memória). Enquanto, as instâncias de **value type**, como uma Struct, permanecem em uma região da memória chamada **Stack** (porção maior da memória).
+
 #### Exemplo de value type
 
 ```swift
