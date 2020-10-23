@@ -58,6 +58,8 @@ void function() {
 <h3>O que são Value Types e Reference Types?</h3>
 <p>Tipos em Swift são categorizados em duas situções: primeiro <strong>value types</strong> onde cada instância armazena uma <strong>cópia única</strong> dos dados. Além de <code class="language-text">struct</code> , <code class="language-text">enums</code>, <code class="language-text">tuplas</code> e <code class="language-text">primitivos</code> são value types. E segundo <strong>reference types</strong> onde as instâncias compartilham a <strong>única cópia</strong> dos dados, normalmente definido por uma <code class="language-text">class</code>.</p>
 <p>A característica básica de um <strong>value type</strong> é que o processo de <strong>cópia</strong> cria uma instância independente com sua própria cópia exclusiva de seus dados.</p>
+<h3>Value Types e Reference Types na memória</h3>
+<p>Quando uma <strong>reference type</strong> é criada, como uma Classe, o sistema armazena a instância real em uma região da memória conhecida como <strong>Heap</strong> (porção menor da memória). Enquanto, as instâncias de <strong>value type</strong>, como uma Struct, permanecem em uma região da memória chamada <strong>Stack</strong> (porção maior da memória).</p>
 <h4>Exemplo de value type</h4>
 <div class="gatsby-highlight" data-language="swift"><pre class="language-swift"><code class="language-swift"><span class="token keyword">struct</span> <span class="token builtin">Data</span> <span class="token punctuation">{</span> 
     <span class="token keyword">var</span> data<span class="token punctuation">:</span> <span class="token builtin">Int</span> <span class="token operator">=</span> <span class="token number">10</span>
