@@ -1,7 +1,7 @@
 ---
 title: "Programação genérica"
 date: "2020-10-29T12:02:10-02:00"
-description: ""
+description: "Nesta postagem abordo o que são códigos genéricos e qual a utilidade na rotina de um desenvolvedor Swift."
 ---
 
 Nesta postagem abordo o que são códigos genéricos e qual a utilidade na rotina de um desenvolvedor Swift.
