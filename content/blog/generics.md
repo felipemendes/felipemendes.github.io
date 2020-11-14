@@ -14,6 +14,8 @@ Essa abordagem permite escrever código onde os tipos são especificados posteri
 
 Deste modo, ao invés de criar uma função ou bloco de código que atenda cada tipo, como `String` ou `Int`, podemos especificar um tipo genérico que atenda qualquer situação. Assim deixamos a própria linguagem inferir o tipo com base no valor informado. O termo `Generic` também pode ser conhecido como tipo `placeholder`.
 
+`Swift` é considerada uma linguagem `type-safe`. Isso significa que, **o tipo deve ser definido antes da compilação**. Por esse motivo, todo tipo deve ser definido.
+
 ## Criando código genérico
 
 Uma função genérica em Swift possui um tipo reservado (um `placeholder`) antes de seu nome e entre sinais menor e maior. Dessa forma: `<Tipo>`.
@@ -106,4 +108,67 @@ func compareValues<T: Equatable>(between a: T, and b: T) -> String {
 
 compareValues(between: 2, and: 3)         // They are not equal
 compareValues(between: "Hi", and: "Hi")   // They are equal
+```
+
+## Protocolos genéricos
+
+Protocolos por si só possibilitam inúmeras implementações, por isso é tão utilizado e difundido entre desenvolvedores `Swift`. E com o uso de `generics`, podemos ampliar ainda mais este conceito. Utilizando a técnica de `associated type` e da cláusula `where` podemos criar protocolos genéricos e fazer restrições por tipo, semelhante aos `placeholders` dos genéricos.
+
+Visto que, protocolos genéricos fazem uso de `associated types`, este conceito também é conhecido como `Protocol Associated Types` ou `PATs`.
+
+### Uso convencional de protocolo
+
+Antes de aprofundar sobre protocolo genérico, vamos criar um protocolo que nos obriga a adicionar uma propriedade do tipo `String`.
+
+A criação do protocolo seria dessa maneira:
+
+```Swift
+protocol MyProtocol {
+  var property: String { get set }
+}
+```
+
+E uma classe em conformidade com este protocolo seria assim:
+
+```Swift
+class MyClass: MyProtocol {
+  var property: String = "Property value"
+}
+```
+
+Para aplicar o conceito de `generics` na nossa propriedade e permitir informar qualquer outro tipo diferente de `String`, podemos fazer o uso de `associated types`.
+
+### Protocolos com `Associated Types`
+
+Em protocolos genéricos, a solução de `placeholder` ou algo como `<T>` é relativo à `associated type`:
+
+```Swift
+protocol MyGenericProtocol {
+  associatedtype T
+
+  var property: T { get set }
+}
+```
+
+Dessa maneira, para que uma `class` ou `struct` se conforme com o protocolo será necessário, além de implementar a propriedade, definir o seu tipo. Está definição pode ser feita de forma `implícita` ou `explícita`.
+
+#### `Associated Type` implícito
+
+De forma implícita, ou seja, que fica subentendido pelo compilador:
+
+```Swift
+class MyClass: MyGenericProtocol {
+  var property = true     // T is `Bool`
+}
+```
+
+#### `Associated Type` explícito
+
+De forma explícita, devemos utilizar um `typealias` para especificar o tipo desejado:
+
+```Swift
+class MyClass: MyGenericProtocol {
+  typealias T = String
+  var property: T = "My generic property"     // T is `String`
+}
 ```
