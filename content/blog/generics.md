@@ -33,7 +33,7 @@ func swapTwoInts(a: Int, b: Int) -> (Int, Int) {
   return (b, a)
 }
 
-swapTwoInts(a: 1, b: 2)     // (2, 1)
+swapTwoInts(a: 1, b: 2) // (2, 1)
 ```
 
 Agora vamos supor que seja necessário trocar dois números de ponto flutuante (`Double`) ou mesmo textos (`String`). Nesta situação, precisaríamos escrever outra função para esta tarefa, pois a função acima aceita apenas a entrada de números inteiros.
@@ -78,7 +78,7 @@ func displayBankAccount<T: BankAccount>(for account: T) -> String {
 
 var myBankAccount = BankAccount(holder: "Felipe", number: 12345678)
 
-displayBankAccount(for: myBankAccount)  // 12345678 account belongs to Felipe
+displayBankAccount(for: myBankAccount) // 12345678 account belongs to Felipe
 ```
 
 Da mesma forma que aplicamos esse comportamento nos métodos, também é possível deixar o Swift inferir o tipo de uma `class` ou `struct` e suas propriedades.
@@ -102,12 +102,11 @@ No exemplo abaixo estamos restringindo a função `compareValues()` somente para
 
 ```swift
 func compareValues<T: Equatable>(between a: T, and b: T) -> String {
-  let result = a == b ? "equal" : "not equal"
-  return "They are \(result)"
+  return a == b ? "They are equals" : "They aren't equals"
 }
 
-compareValues(between: 2, and: 3)         // They are not equal
-compareValues(between: "Hi", and: "Hi")   // They are equal
+compareValues(between: 2, and: 3)         // They aren't equals
+compareValues(between: "Hi", and: "Hi")   // They are equals
 ```
 
 ## Protocolos genéricos
@@ -158,7 +157,7 @@ De forma implícita, ou seja, que fica subentendido pelo compilador:
 
 ```Swift
 class MyClass: MyGenericProtocol {
-  var property = true     // T is `Bool`
+  var property = true // T is `Bool`
 }
 ```
 
@@ -169,6 +168,6 @@ De forma explícita, devemos utilizar um `typealias` para especificar o tipo des
 ```Swift
 class MyClass: MyGenericProtocol {
   typealias T = String
-  var property: T = "My generic property"     // T is `String`
+  var property: T = "My generic property" // T is `String`
 }
 ```
