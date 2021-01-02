@@ -83,13 +83,13 @@ workflows:
         title: Install dependencies
         inputs:
         - content: pod install
-    - xcode-test@2:
+    - xcode-test:
         inputs:
         - project_path: "$BITRISE_PROJECT_PATH"
         - simulator_platform: iOS Simulator
         - simulator_device: "$BITRISE_IOS_DEVICE"
         - scheme: "$BITRISE_SCHEME"
-    - deploy-to-bitrise-io@1: {}
+    - deploy-to-bitrise-io: {}
     - cache-push:
         inputs:
         - cache_paths: "./Pods -> ./Podfile.lock"
@@ -114,14 +114,14 @@ Cada `workflow` pode ter um comportamento para cada situação ou necessidade. N
 - Buscar por cache;
 - Instalar os `pods`;
 - Testar o projeto;
-- `Deploy` do `build`;
+- `Deploy` após `build`;
 - Salvar cache.
 
 ### Deploy
 
-O `deploy` da aplicação permite baixar o arquivo `.ipa` e instalá-lo nos dispositivos habilitados. Dessa forma, a equipe interna pode facilmente testar o aplicativo desenvolvido.
+O `step` de `deploy` permite salvar relatório do `build` executado, como resultado de testes e `linters`. Para etapas de geração de `IPAs`, é possível ainda criar uma URL para instalação pública. Dessa forma, a equipe interna pode facilmente testar o aplicativo em desenvolvimento.
 
-Para permitir o `deploy` é necessário salvar os `certificados/provisioning profiles` manualmente na `dashboard`. Maiores informações [aqui](https://devcenter.bitrise.io/deploy/ios-deploy/deploying-an-ios-app-to-bitrise-io/).
+Para permitir a exportação da `IPA` é necessário salvar os `certificados/provisioning profiles` manualmente na `dashboard`. Mais informações [aqui](https://devcenter.bitrise.io/deploy/ios-deploy/deploying-an-ios-app-to-bitrise-io/).
 
 # Bitrise CLI
 
