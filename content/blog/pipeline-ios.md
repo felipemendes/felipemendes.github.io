@@ -1,5 +1,5 @@
 ---
-title: "Pipeline de desenvolvimento no iOS"
+title: "Pipeline de desenvolvimento no Xcode"
 date: "2020-12-31"
 description: "Muito se discute sobre metogologia ágil e como podemos entregar aplicações com mais qualidade. No desenvolvimento de software encontramos diversas maneiras para atingir esse objetivo."
 ---
@@ -95,7 +95,7 @@ workflows:
         - cache_paths: "./Pods -> ./Podfile.lock"
 ```
 
-No código acima, temos o cabeçalho de identificação do `Bitrise`, as variáveis de ambiente, gatilhos de execução e os flucos de execução.
+No código acima, temos o cabeçalho de identificação do `Bitrise`, as variáveis de ambiente, gatilhos de execução e os fluxos de execução.
 
 ## Variáveis de ambiente
 
