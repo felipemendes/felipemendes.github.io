@@ -6,35 +6,27 @@ description: "Muito se discute sobre metogologia ágil e como podemos entregar a
 
 ## Introdução
 
-Muito se discute sobre metogologia ágil e como podemos entregar aplicações com mais qualidade. No desenvolvimento de software encontramos diversas maneiras para atingir esse objetivo. A implementação de uma `pipeline` é uma forma muito comum encontrada na maior partes das equipes.
+Muito se discute sobre metogologia ágil e como podemos entregar aplicações com mais qualidade. No desenvolvimento de software encontramos diversas maneiras para atingir esse objetivo. Automatizar todo processo de desenvolvimento e teste aumenta muito a qualidade do produto e economiza tempo para as equipes. A implementação de uma `pipeline` é uma forma muito comum para o processo de automatização.
 
 `Pipeline` é uma sequência de etapas que precisam ser executadas para colocar uma aplicação em produção. Essas etapas podem: fazer o `build` do código; executar testes automatizados; implantar ambientes de testes e produção; entre outras.
 
 O principal objetivo de uma `pipeline` em desenvolvimento é automatizar o processo de entrega de software, colocando-os em produção de forma rápida e contínua. E sem perder a qualidade da entrega.
 
-O conceito de `pipeline` envolve alguns termos, cada vez mais comuns no desenvolvimento de aplicações, como `Continuos Integration (CI)` e `Continuous Delivery (CD)`:
+O conceito de `pipeline` envolve alguns termos, cada vez mais comuns no desenvolvimento, como `Continuos Integration (CI)` e `Continuous Delivery (CD)`:
 
-- `CI`, ou intregração contínua, é o processo de automatização de `builds` e testes de código que acontece quando um desenvolvedor faz alguma alteração no repositório.
-- `CD`, ou entrega contínua, consiste em entregar novos recursos aos usuários de forma mais rápida e eficiente possível. O objetivo principal da entrega contínua é permitir um fluxo constante de atualizações disponibilizadas em produção.
+- `CI`, ou intregração contínua, é o processo de automatização de `builds` e testes automatizados que acontecem quando um desenvolvedor faz alguma alteração no repositório;
+
+- `CD`, ou entrega contínua, consiste em entregar novos recursos aos usuários de forma mais rápida e eficiente possível. O objetivo principal da entrega contínua é permitir um fluxo constante de atualizações disponibilizadas em produção. Cada entrega está relacionada a uma `feature` da `sprint` do `Scrum`.
 
 Todo esse processo é de responsabilidade da `pipeline` e está diretamente ligado aos conceitos de metodologia ágil que visam sempre fazer entregas constantes que geram maior valor percebido pelo cliente. Isso facilita o processo de desenvolvimento que deverá lidar com entregas menores e não com atualizações gigantescas, como era feito antigamente no desenvolvimento de software.
 
 # Pipeline em iOS
 
-Atualmente, há diversas plataformas que proporcionam esse serviço às equipes. O `Bitrise` é uma opção muito comum no desenvolvimento `mobile`, pois tem foco em aplicações iOS, Android, Xamarin, React Native, Ionic, entre outros.
+Atualmente, há diversas plataformas que proporcionam esse serviço às equipes. O `Bitrise` é uma opção muito comum no desenvolvimento `mobile`, pois tem foco nas principais plataformas, como: `iOS`, `Android`, `Xamarin`, `React Native`, `Ionic`, entre outros.
 
 A plataforma tem muito engajamento pela comunidade de desenvolvedores, o que possibilita um crescimento exponencial com ajuda de `add-ons` e integrações criados pelos próprios usuários. Além disso, a documentação oficial é muito rica em detalhes e a interface é simples e intuitiva.
 
 <div><img style="width:100%;" src="../assets/pipeline-ios/bitrise.svg"/></div>
-
-# Workflows
-
-Um `workflow` no `Bitrise` é um conjunto de passos, ou `steps` que são executados sequencialmente ao iniciar um `build`. `Workflows` podem ser criados de duas maneiras:
-
-1. Alterando diretamente o arquivo `bitrise.yml` do repositório;
-2. Usando o editor visual disponível em `bitrise.io`. Ao editar pela `dashboard`, o arquivo `YAML` de configurações refletirá as mudanças aplicadas.
-
-Os `workflows` possibilitam uma infinidade de execuções e podem ser criados quantos forem necessários. Um `workflow` pode trabalhar individualmente, em conjunto com outros fluxos ou através de gatilhos pré-estabelecidos.
 
 # Configurando um projeto
 
@@ -44,11 +36,20 @@ Todos os detalhes e procedimentos de implantação podem ser encontrados [nesse 
 
 # Personalizando as configurações
 
-Ao iniciar um novo `app` é gerado alguns `workflows` com `steps` de modelo para o tipo de projeto escolhido. No caso do `iOS`, há `steps` de instalação de `Pods` e configuração de `certificados/provisioning profiles`.
+Ao iniciar um novo `app` é gerado alguns `workflows` de modelo para o tipo de projeto escolhido. No caso do `iOS`, há `steps` de instalação de `Pods` e configuração de `certificados/provisioning profiles`.
+
+## Workflows
+
+Um `workflow` no `Bitrise` é um conjunto de passos, ou `steps` que são executados sequencialmente ao iniciar um `build`. `Workflows` podem ser criados de duas maneiras:
+
+1. Alterando diretamente o arquivo `bitrise.yml` do repositório;
+2. Usando o editor visual disponível em `bitrise.io`. Ao editar pela `dashboard`, o arquivo `YAML` de configurações refletirá as mudanças aplicadas.
+
+Os `workflows` possibilitam uma infinidade de execuções e podem ser criados quantos forem necessários. Um `workflow` pode trabalhar individualmente, em conjunto com outros fluxos ou através de gatilhos pré-estabelecidos.
 
 ## YAML
 
-O arquivo `YAML` possui todos os procedimentos que o `workflow` irá executar. Para facilitar a identificação do que será executado e modificações futuras, podemos criar o arquivo `bitrise.yml` na raiz do repositório. Para isso é necessário informar na `dashboard` buscar pelo arquivo salvo. Detalhes dessa configuração [aqui](https://devcenter.bitrise.io/builds/bitrise-yml-online/).
+O arquivo `YAML` possui todos os procedimentos que o `workflow` irá executar. Para facilitar a identificação do que será executado e modificações futuras, podemos criar o arquivo `bitrise.yml` na raiz do repositório. Para isso é necessário informar na `dashboard` para buscar pelo arquivo salvo. Detalhes dessa configuração [aqui](https://devcenter.bitrise.io/builds/bitrise-yml-online/).
 
 ### Exemplo de configuração para iOS:
 
@@ -105,7 +106,7 @@ As variáveis de ambiente possibilitam a modificação rápida direto pela `dash
 
 Os `triggers` permitem executar `workflows` com base em algum evento, por exemplo, para `push` e `pull requests` do repositório. É possível configurar eventos para cada `branch` ou mesmo ter um comportamento para qualquer atividade.
 
-## Workflows
+## Steps
 
 Cada `workflow` pode ter um comportamento para cada situação ou necessidade. No nosso exemplo, o `workflow` `CI` possui os seguintes procedimentos:
 
