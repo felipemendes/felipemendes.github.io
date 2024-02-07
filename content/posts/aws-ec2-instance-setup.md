@@ -1,5 +1,5 @@
 ---
-title: "Configurando um Projeto FastAPI com Docker em uma Instância AWS EC2"
+title: "FastAPI com Docker em uma Instância AWS EC2"
 date: "2024-02-04T15:58:13-02:00"
 description: ""
 ---
